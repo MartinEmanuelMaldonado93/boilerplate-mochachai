@@ -153,18 +153,25 @@ suite("Unit Tests", function () {
   }
   // -----------------------------------------------------------------------------
 
-  const Car = function () {
-    this.model = "sedan";
-    this.engines = 1;
-    this.wheels = 4;
-  };
+  class Car {
+    constructor() {
+      this.model = "sedan";
+      this.engines = 1;
+      this.wheels = 4;
+    }
+    getDescription() {
+      return `model: ${this.model}. engines: ${this.engines}. wheels: ${this.wheels}`;
+    }
+  }
 
-  const Plane = function () {
-    this.model = "737";
-    this.engines = ["left", "right"];
-    this.wheels = 6;
-    this.wings = 2;
-  };
+  class Plane {
+    constructor() {
+      this.model = "737";
+      this.engines = ["left", "right"];
+      this.wheels = 6;
+      this.wings = 2;
+    }
+  }
 
   const myCar = new Car();
   const airlinePlane = new Plane();
